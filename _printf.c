@@ -1,9 +1,11 @@
 #include "main.h"
 
- /**
-  * _printf - main function file
-  *
- * @format: pointer to format
+
+/**
+ * _printf - similar to std printf
+ * @format: the format for output to display
+ *
+ *
  *
  * Return: 0
  */
@@ -20,9 +22,7 @@ int _printf(const char *format, ...)
 	while (*format)
 	{
 		if (*format != '%')
-		{
 			print_char(*format, &char_print);
-		}
 		else
 		{
 			format++;
@@ -30,27 +30,19 @@ int _printf(const char *format, ...)
 				break;
 
 			if (*format == '%')
-			{
 				print_char('%', &char_print);
-			}
 			else if (*format == 'c')
-			{
 				char c = va_arg(args_list, int);
 
 				print_char(c, &char_print);
-			}
 			else if (*format == 's')
-			{
 				char *str = va_arg(args_list, char *);
 
 				print_string(str, &char_print);
-			}
 			else if (*format == 'd' || *format == 'i')
-			{
 				int num = va_arg(args_list, int);
 
 				print_integer(num, &char_print);
-			}
 		}
 		format++;
 	}
