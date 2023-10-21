@@ -8,7 +8,7 @@
  * Return: 0 Always
  *
  */
-print_binary(unsigned int num, int *char_print)
+void print_binary(unsigned int num, int *char_print)
 {
 	char binary[33];
 	int i;
