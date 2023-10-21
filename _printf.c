@@ -43,6 +43,9 @@ int _printf(const char *format, ...)
 				int num = va_arg(args_list, int);
 
 				print_integer(num, &char_print);
+			else if (*format == 'b')
+				unsigned int num = va_arg(args_list, unsigned int);
+
 		}
 		format++;
 	}
