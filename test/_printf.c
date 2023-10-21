@@ -47,22 +47,10 @@ int _printf(const char *format, ...)
 				unsigned int num = va_arg(args_list, unsigned int);
 
 				print_binary(num, &char_print);
-			/* Handle u, o, x, X */
-			else if (*format == 'u')
-				unsigned int num = va_arg(args_list, unsigned int);
 
-				print_integer_b(num, 10, &char_print);
-			else if (*format == 'o')
-				unsigned int num = va_arg(args_list, unsigned int);
-
-				print_integer_b(num, 8, &char_print);
-			else if (*format == 'x' || *format == 'X')
-				unsigned int num = va_arg(args_list, unsigned int);
-
-				print_integer_b(num, 16, &char_print);
 		}
 		format++;
 	}
-	va_end(args_list);
+	va_end(args_list)I;
 	return (char_print);
 }

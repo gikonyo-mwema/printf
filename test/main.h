@@ -14,6 +14,4 @@ int print_integer(int num, int *char_print);
 int print_string(char *str, int *char_print);
 int print_char(char c, int *char_print);
 void print_binary(unsigned int num, int *char_print);
-void print_integer_b(int num, int base, int *char_print);
-
 #endif
