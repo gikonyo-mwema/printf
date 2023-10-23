@@ -1,18 +1,20 @@
 #include "main.h"
 /**
- * print_string - prints string
- * @str: string to be printed
- * @char_print: pointer
- *
- * Return: Always 0
- */
-int print_string(char *str, int *char_print)
+* printString - Print a string
+* @str: String to print
+* Return: Count of printed characters
+*/
+int printString(const char *str)
 {
-	int str_len = 0;
+	int char_count = 0;
 
-	while (str[str_len] != '\0')
-		str_len++;
-	write(1, str, str_len);
-	(*char_print) += str_len;
-	return (0);
+	if (str == NULL)
+		str = "(null)";
+	while (*str != '\0')
+	{
+		_putchar(*str);
+		char_count++;
+		str++;
+	}
+	return (char_count);
 }

@@ -1,24 +1,20 @@
 #include "main.h"
 /**
- * print_binary - prints b convesion specifiers
- *
- * @num: number to be converted t binary
- * @char_print: pointer
- *
- * Return: 0 Always
- *
- */
-void print_binary(unsigned int num, int *char_print)
+ * printBinary - Print a binary number
+ * @num: binary number to print
+ * Return: Count of printed characters
+ **/
+int printBinary(unsigned int num)
 {
-	char binary[33];
-	int i;
+	int n = sizeof(num) * 8;
+	int i = n - 1;
 
-	for (i = 31; i >= 0; i--)
+	while (i >= 0)
 	{
-		binary[31 - i] = ((num >> i) & 1) + '0';
-	}
-	binary[32] = '\0';
+		char bit = ((num >> i) & 1) ? 'i' : '0';
 
-	write(1, binary, 32);
-	char_print += 32;
+		_putchar(bit);
+		i--;
+	}
+	return (0);
 }
