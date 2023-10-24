@@ -9,6 +9,8 @@ int _printf(const char *format, ...)
 {
 	int char_count = 0;
 	va_list args_list;
+	char buffer[BUFFER_SIZE];
+	int buffer_ind = 0;
 
 	if (format == NULL)
 		return (-1);
@@ -98,9 +100,17 @@ int processSpecifier(char specifier, va_list args_list)
 				char_count += printBinary(num);
 				break;
 			}
-			/**
-			 * Handle other specifiers here (e.g., 'u', 'o', 'x', 'X')
-			 */
+		case 'S':
+			{
+				char *str = va_arg(args_list, char *);
+				char_count += printString(str);
+			}
+		case 'p':
+			{
+				void *ptr = va_arg(args_list, void *);
+
+				char_count += printPointer(ptr);
+			}
 	}
 	return (char_count);
 }
