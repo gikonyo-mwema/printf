@@ -18,6 +18,9 @@ int printBinary(unsigned int num);
 int _putchar(char c);
 void print_integer_b(int num, int base, int *char_print);
 
+
+int print_pointer(void *ptr);
+
 int processSpecifier(char specifier, va_list args_list);
 int processFormat(const char *format, va_list args_list);
 
